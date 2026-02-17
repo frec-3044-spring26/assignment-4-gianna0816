@@ -49,6 +49,7 @@ species_count <- complete_old |>
   slice(1:5)
 
 #Code for Five most common species
+#(The variable in a facet will form the panels of a plot)
 complete_old |>
   filter(species %in% species_count$species) |>
   ggplot(aes(plot_type, hindfoot_length,
