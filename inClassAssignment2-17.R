@@ -13,5 +13,7 @@ ggplot(complete_old, aes(weight, hindfoot_length, color = plot_type)) +
   scale_x_log10() +
   scale_y_log10()
 
-ggplot(complete_old, aes(plot_type, hindfoot_length)) +
-  geom_boxplot()
+ggplot(complete_old, aes(plot_type, hindfoot_length,
+                         fill = plot_type)) +
+  geom_boxplot() +
+  scale_x_discrete(labels = label_wrap_gen(width = 10))
