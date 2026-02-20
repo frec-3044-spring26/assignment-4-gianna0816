@@ -19,6 +19,8 @@ For some reason, `read_excel()` does not like relative paths, so we will use the
 
 ```{r}
 library(here)
+library(dplyr)
+library(tidyverse)
 file_name <- file.path(here(),"data/lake_ice_off_data.xlsx")
 ```
 
@@ -33,6 +35,7 @@ Now, look at a preview of the data using the `head()` function. The `doy` in `ic
 
 ```{r}
 head(ice_data)
+names(ice_data)
 ```
 
 There should be four columns and \~2703 rows.
@@ -59,7 +62,9 @@ Be sure that the title, x-axis, and y-axis labels are clearly labeled.
 **Answer 1:**
 
 ```{r}
-
+ggplot(sunapee, aes(year, ice_off_doy)) +
+  geom_line() +
+  geom_point()
 ```
 
 # How does ice cover change over time at Lake Sunapee?
