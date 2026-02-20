@@ -46,7 +46,8 @@ We will practice key skills in the module using a focal lake. Use the `filter` f
 
 ```{r}
 sunapee <- ice_data |>
-  filter(lake_name == "Sunapee")
+  filter(lake_name == "Sunapee") |>
+  
 ```
 
 You will be using the `sunapee` data for the rest of the module until Question 11
@@ -64,7 +65,10 @@ Be sure that the title, x-axis, and y-axis labels are clearly labeled.
 ```{r}
 ggplot(sunapee, aes(year, ice_off_doy)) +
   geom_line() +
-  geom_point()
+  geom_point(color = "deepskyblue4") +
+  scale_x_log10() +
+  theme_bw() +
+  labs(title = "Ice off Day over the Years at Lake Sunapee", x = "Year", y = "Ice of Day of Year")
 ```
 
 # How does ice cover change over time at Lake Sunapee?
