@@ -69,7 +69,7 @@ ggplot(sunapee, aes(year, ice_off_doy)) +
   geom_point(color = "deepskyblue4") +
   scale_x_log10() +
   theme_bw() +
-  labs(title = "Ice off Day over the Years at Lake Sunapee", x = "Year", y = "Ice of Day of Year")
+  labs(title = "Ice off Day over the Years at Lake Sunapee", x = "Year", y = "Ice off Day of Year")
 ```
 
 # How does ice cover change over time at Lake Sunapee?
@@ -80,7 +80,7 @@ We want to model how the ice-off date changes over time. Our approach in this mo
 
 What do you expect the sign (plus, minus, or no change) to be for the slope of the relationship? Why?
 
-**Answer 2:**
+**Answer 2:** I expect the sign for the slope of the relationship to be negative because, in the earlier plot, the Ice off Day of Year was generally descending over the years.
 
 Use the `lm` function to predict `ice_off_doy` as a function (`~`) of the year for the data.frame called `sunapee`. You can learn more about the `lm` function [here](https://www.datacamp.com/tutorial/linear-regression-R)
 
